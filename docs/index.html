@@ -46,7 +46,7 @@
 					paths: 'auto',
 					placeholder: '搜索'
 				},
-				formatUpdated: '{MM}/{DD} {HH}:{mm}',
+				formatUpdated: '{YYYY}/{MM}/{DD} {HH}:{mm}:{ss}',
 				plugins: [
 					function(hook, vm) {
 						hook.beforeEach(function(html) {
@@ -57,7 +57,7 @@
 							} else {
 								url = 'https://github.com/funidocs/vue-doc/blob/master/docs/' + vm.route.file;
 							}
-							var editHtml = '[:memo: 编辑页面](' + url + ')\n';
+							var editHtml = '[:memo: 编辑页面](' + url + ') 上次更新: {docsify-updated}\n';
 
 							return editHtml + html;
 						});
@@ -73,6 +73,6 @@
 		<script src="//unpkg.com/prismjs/components/prism-markdown.min.js"></script>
 		<script src="//unpkg.com/prismjs/components/prism-nginx.min.js"></script>
 		<script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
-
+		<script src="//unpkg.com/vue"></script>
 	</body>
 </html>
