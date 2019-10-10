@@ -9,4 +9,4 @@
 - Multiple themes
 
 [GitHub](https://github.com/funidocs/vue-doc)
-[Getting Started](#docsify)
+[Getting Started](/quickstart)
