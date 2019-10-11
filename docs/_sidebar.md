@@ -4,6 +4,7 @@
 - [Curd](curd.md)
 - [FuniAuditButtomBtn](FuniAuditButtomBtn.md)
 - [FuniProcessBottomBtn](FuniProcessBottomBtn.md)
+- [FuniOperatingRecord](FuniOperatingRecord.md)
 
 
 
