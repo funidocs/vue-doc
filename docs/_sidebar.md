@@ -1,7 +1,9 @@
 
 - [快速开始](quickstart.md)
 - [表单-Form](form.md)
-- [Curd](curd.md)
+- [Curd组件](curd.md)
+- [详情页面头部组件](detailHead.md)
+- [楼栋组件](building.md)
 - [FuniAuditButtomBtn](FuniAuditButtomBtn.md)
 
 
