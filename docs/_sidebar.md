@@ -5,6 +5,8 @@
 - [详情页面头部组件](detailHead.md)
 - [楼栋组件](building.md)
 - [FuniAuditButtomBtn](FuniAuditButtomBtn.md)
+- [FuniProcessBottomBtn](FuniProcessBottomBtn.md)
+- [FuniOperatingRecord](FuniOperatingRecord.md)
 
 
 
