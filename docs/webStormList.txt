@@ -1,0 +1,166 @@
+<!--xxx系统-一级菜单名-二级菜单名-页面名称-->
+<template>
+  <div>
+    <a-card :tabList="cardTab" :activeTabKey="listType" @tabChange="onTabChange">
+      <span slot="customRender" slot-scope="item">
+        <a-badge count="5" :offset="[15, 5]" :numberStyle="{ background: 'rgba(249, 94, 90, 1)' }">
+          <span class="f16">数据查询</span>
+        </a-badge>
+      </span>
+      <funi-search></funi-search>
+    </a-card>
+    <funi-curd
+      @btnClick="_btnClick"
+      ref="curd"
+      :option="curdOption"
+      :data="tableList"
+      :filterForm="filterForm"
+    ></funi-curd>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: '${COMPONENT_NAME}',
+    components: {},
+    props: {},
+    created() {
+
+    },
+    data() {
+      return {
+        cardTab: [
+          {
+          key: 'query',
+          // tab: '数据查询',
+          scopedSlots: { tab: 'customRender' },
+        },
+        {
+          key: 'count',
+          tab: '数据统计',
+        },
+        ],
+        listType: 'query',
+        curdOption: {
+          api: '/api/list/todo',
+          method: 'post',
+          title: '项目备案设立',
+          selectionShow: true,//是否显示复选框
+          requestOtherParams: { type: 'todo' },
+          columns: [
+            {
+              title: '业务件号',
+              dataIndex: 'id',
+              scopedSlots: { customRender: 'id' },
+              align: 'center',
+              className: 'allowDrag',
+              customCell: record => {
+                return {
+                  on: { // 事件
+                    click: () => {
+                      console.log('点击了列', record);
+                    },
+                  },
+                };
+              },
+            },
+            {
+              title: '来源',
+              dataIndex: 'source',
+              align: 'center',
+              className: 'allowDrag',
+            },
+            {
+              title: '当前节点',
+              dataIndex: 'node',
+              align: 'center',
+              className: 'allowDrag',
+            },
+            {
+              title: '申请日期',
+              dataIndex: 'date',
+              align: 'center',
+              className: 'allowDrag',
+            },
+
+            {
+              title: '风险提示',
+              dataIndex: 'state',
+              key: 'state',
+              align: 'center',
+              className: 'allowDrag',
+              customRender: (text, row, index) => {
+                // if (text  == 3) {
+                //   return <span>
+                //   <a-icon type="minus-circle" style="color:red;margin-right:3px;"/>{text}
+                //     </span>
+                // }else if(text == 2){
+                //   return <span>
+                //   <a-icon type="check-circle" style="color:green;margin-right:3px;"/>{text}
+                //     </span>
+                // } else{
+                //   return text
+                // }
+              },
+            },
+            {
+              title: '项目名称',
+              dataIndex: 'itemName',
+              align: 'center',
+              className: 'allowDrag',
+            },
+            {
+              title: '开发企业',
+              dataIndex: 'company',
+              className: 'allowDrag',
+              align: 'center',
+            },
+            {
+              title: '操作',
+              dataIndex: 'action',
+              align: 'center',
+              width: '150px',
+              customRender: (text, row, index) => {
+                // if(row.state === 2){
+                //   return (
+                //     <span>
+                //     <a href="javascript:;" onClick={this._btnClick.bind(this, {name:'edit',row:row})}>编辑</a>
+                //     <a-divider type="vertical" />
+                //     <a href="javascript:;" onClick={this._btnClick.bind(this, {name:'cs',row:row})}>初审</a>
+                //     </span>
+                // )
+                // }else{
+                //   return   <a href="javascript:;" onClick={this._btnClick.bind(this, {name:'cs',row:row})} >初审</a>
+                // }
+              },
+            },
+          ],
+          pagination: {},
+          btns: [
+            { label: '新建', name: 'add', icon: 'plus', disabled: false },
+            { label: '批量操作', name: 'batch', icon: 'plus', batch: true, disabled: true },
+          ]
+        },
+        tableList: [],
+      };
+    },
+    computed: {},
+    mounted() {
+
+    },
+    methods: {
+      onTabChange(key) {
+        console.log('key', key);
+        this.listType = key;
+        this.curdOption.requestOtherParams.type = key;
+        this.$refs.curd._getData();
+      },
+      _btnClick(obj) {
+        console.log('_btnClick', obj);
+        if (obj.name === 'add') {
+          this.$refs.createModal.show();
+        }
+      },
+    },
+  };
+</script>
