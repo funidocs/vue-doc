@@ -11,7 +11,7 @@
 src
 ├── App.vue     # 主文件
 ├── apps        # 所有子系统
-   ├── ccs      # 子系统
+   ├── ccs      # 子系统名
       ├── config.js      # 子系统字符串常量存储位置 如:api地址
       ├── router.json    # 开发阶段的路由配置 
       ├── store.js       # 状态管理
@@ -40,6 +40,21 @@ src
 └── utils       # 工具库
 
 ```
+### 所有子系统名称
+
+1. ccs 配置管理
+2. pro 项目管理
+3. svy 测绘成果管理
+4. hse 楼盘表管理
+5. chs 商品房交易管理
+6. shs 存量房交易管理
+7. rent 房屋租赁管理
+8. hm 房屋抵押管理
+9. trs 交易产权管理
+10. pct 从业主体管理
+11. fps 预售资金监管
+12. fsh 存量房资金监管
+
 
 ### 一点要求
 
@@ -53,7 +68,7 @@ src
    * 6.2 目录名、文件名统一小驼峰 如: index.vue / devQuery.vue 
 7. 如有系统级公用组件、js库 的增加， 需先在自己本地测试通过后 提交 @李强 统一添加至主工程仓库，再通知大家执行:yarn run update
 8. 提供有2个.vue文件模板(有不明白使用方法的可 @古加文 @蒋韩肖)
-   * 8.1 普通页.vue  [WebStorm]()  [VSCode](https://github.com/funidocs/vue-doc/blob/master/docs/vscodeModal.json)
+   * 8.1 普通页.vue  [WebStorm](https://github.com/funidocs/vue-doc/blob/master/docs/webStormModal.txt)  [VSCode](https://github.com/funidocs/vue-doc/blob/master/docs/vscodeModal.json)
    * 8.2 列表页.vue  [WebStorm](https://github.com/funidocs/vue-doc/blob/master/docs/webStormList.txt)  [VSCode](https://github.com/funidocs/vue-doc/blob/master/docs/vscodeModal.json)
 9. .vue文件顶部 必须注释 页面所属路径说明 如: 
    ``` <!-- 项目管理子系统-开发项目查询-项目备案设立-项目基本信息tag --> ```
