@@ -156,6 +156,7 @@
 			"\t\t\t};",
 			"\t\t},",
 			"\t\tcomputed: {},",
+			"\t\twatch: {},",
 			"\t\tmounted() {",
 			"",
 			"\t\t},",

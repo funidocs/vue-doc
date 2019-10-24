@@ -1,10 +1,10 @@
-<!--xxxÏµÍ³-Ò»¼¶²Ëµ¥Ãû-¶þ¼¶²Ëµ¥Ãû-Ò³ÃæÃû³Æ-->
+<!--xxxÏµÍ³-Ò»ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½-Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-->
 <template>
   <div>
     <a-card :tabList="cardTab" :activeTabKey="listType" @tabChange="onTabChange">
       <span slot="customRender" slot-scope="item">
         <a-badge count="5" :offset="[15, 5]" :numberStyle="{ background: 'rgba(249, 94, 90, 1)' }">
-          <span class="f16">Êý¾Ý²éÑ¯</span>
+          <span class="f16">ï¿½ï¿½ï¿½Ý²ï¿½Ñ¯</span>
         </a-badge>
       </span>
       <funi-search></funi-search>
@@ -32,59 +32,59 @@
         cardTab: [
           {
           key: 'query',
-          // tab: 'Êý¾Ý²éÑ¯',
+          // tab: 'ï¿½ï¿½ï¿½Ý²ï¿½Ñ¯',
           scopedSlots: { tab: 'customRender' },
         },
         {
           key: 'count',
-          tab: 'Êý¾ÝÍ³¼Æ',
+          tab: 'ï¿½ï¿½ï¿½ï¿½Í³ï¿½ï¿½',
         },
         ],
         listType: 'query',
         curdOption: {
           api: '/api/list/todo',
           method: 'post',
-          title: 'ÏîÄ¿±¸°¸ÉèÁ¢',
-          selectionShow: true,//ÊÇ·ñÏÔÊ¾¸´Ñ¡¿ò
+          title: 'ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+          selectionShow: true,//ï¿½Ç·ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ñ¡ï¿½ï¿½
           requestOtherParams: { type: 'todo' },
           columns: [
             {
-              title: 'ÒµÎñ¼þºÅ',
+              title: 'Òµï¿½ï¿½ï¿½ï¿½ï¿½',
               dataIndex: 'id',
               scopedSlots: { customRender: 'id' },
               align: 'center',
               className: 'allowDrag',
               customCell: record => {
                 return {
-                  on: { // ÊÂ¼þ
+                  on: { // ï¿½Â¼ï¿½
                     click: () => {
-                      console.log('µã»÷ÁËÁÐ', record);
+                      console.log('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', record);
                     },
                   },
                 };
               },
             },
             {
-              title: 'À´Ô´',
+              title: 'ï¿½ï¿½Ô´',
               dataIndex: 'source',
               align: 'center',
               className: 'allowDrag',
             },
             {
-              title: 'µ±Ç°½Úµã',
+              title: 'ï¿½ï¿½Ç°ï¿½Úµï¿½',
               dataIndex: 'node',
               align: 'center',
               className: 'allowDrag',
             },
             {
-              title: 'ÉêÇëÈÕÆÚ',
+              title: 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
               dataIndex: 'date',
               align: 'center',
               className: 'allowDrag',
             },
 
             {
-              title: '·çÏÕÌáÊ¾',
+              title: 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾',
               dataIndex: 'state',
               key: 'state',
               align: 'center',
@@ -104,19 +104,19 @@
               },
             },
             {
-              title: 'ÏîÄ¿Ãû³Æ',
+              title: 'ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½',
               dataIndex: 'itemName',
               align: 'center',
               className: 'allowDrag',
             },
             {
-              title: '¿ª·¢ÆóÒµ',
+              title: 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµ',
               dataIndex: 'company',
               className: 'allowDrag',
               align: 'center',
             },
             {
-              title: '²Ù×÷',
+              title: 'ï¿½ï¿½ï¿½ï¿½',
               dataIndex: 'action',
               align: 'center',
               width: '150px',
@@ -124,27 +124,30 @@
                 // if(row.state === 2){
                 //   return (
                 //     <span>
-                //     <a href="javascript:;" onClick={this._btnClick.bind(this, {name:'edit',row:row})}>±à¼­</a>
+                //     <a href="javascript:;" onClick={this._btnClick.bind(this, {name:'edit',row:row})}>ï¿½à¼­</a>
                 //     <a-divider type="vertical" />
-                //     <a href="javascript:;" onClick={this._btnClick.bind(this, {name:'cs',row:row})}>³õÉó</a>
+                //     <a href="javascript:;" onClick={this._btnClick.bind(this, {name:'cs',row:row})}>ï¿½ï¿½ï¿½ï¿½</a>
                 //     </span>
                 // )
                 // }else{
-                //   return   <a href="javascript:;" onClick={this._btnClick.bind(this, {name:'cs',row:row})} >³õÉó</a>
+                //   return   <a href="javascript:;" onClick={this._btnClick.bind(this, {name:'cs',row:row})} >ï¿½ï¿½ï¿½ï¿½</a>
                 // }
               },
             },
           ],
           pagination: {},
           btns: [
-            { label: 'ÐÂ½¨', name: 'add', icon: 'plus', disabled: false },
-            { label: 'ÅúÁ¿²Ù×÷', name: 'batch', icon: 'plus', batch: true, disabled: true },
+            { label: 'ï¿½Â½ï¿½', name: 'add', icon: 'plus', disabled: false },
+            { label: 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', name: 'batch', icon: 'plus', batch: true, disabled: true },
           ]
         },
         tableList: [],
       };
     },
     computed: {},
+    watch: {
+    
+    },
     mounted() {
 
     },
