@@ -39,8 +39,9 @@ src
 ├── store       # vuex 状态
 └── utils       # 工具库
 
+```
 
-### 
+### 一点要求
 
 1. 整个河南房屋交易生态平台根据功能模块采用拆分为子系统的方式进行独立开发(生产会集成一个系统打包发布)
 2. 各终端页面在对应目录下开发，终端和终端之间文件不能引用，有公用的必须放common里面(为后面各终端独立部署做准备)
@@ -54,4 +55,6 @@ src
 8. 提供有2个.vue文件模板(有不明白使用方法的可 @古加文 @蒋韩肖)
    8.1 普通页.vue  [WebStorm]()  [VSCode](https://github.com/funidocs/vue-doc/blob/master/docs/vscodeModal.json)
    8.2 列表页.vue  [WebStorm](https://github.com/funidocs/vue-doc/blob/master/docs/webStormList.txt)  [VSCode](https://github.com/funidocs/vue-doc/blob/master/docs/vscodeModal.json)
-9. .vue文件顶部 必须注释 页面所属路径说明 如: <!-- 项目管理子系统-开发项目查询-项目备案设立-项目基本信息tag -->
+9. .vue文件顶部 必须注释 页面所属路径说明 如: 
+   ``` <!-- 项目管理子系统-开发项目查询-项目备案设立-项目基本信息tag --> ```
+10. 写自定义组件之前先看 demo->demo内是否已存在, 提供给整个系统使用的组件先本地测试通过后 @李强 加入主工程仓库，再通知大家更新。 
